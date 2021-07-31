@@ -11,21 +11,21 @@ import java.util.Map;
 public class CommonDAO {
 
     @Autowired
-    public SqlSessionTemplate tmsSqlSessionTemplate;
+    public SqlSessionTemplate sqlSessionTemplate;
 
     public int delete(String sqlId)
     {
-        return tmsSqlSessionTemplate.delete(sqlId);
+        return sqlSessionTemplate.delete(sqlId);
     }
 
     public int delete(String sqlId,String key)
     {
-        return tmsSqlSessionTemplate.delete(sqlId, key);
+        return sqlSessionTemplate.delete(sqlId, key);
     }
 
     public int delete(String sqlId, Map rowMap)
     {
-        return tmsSqlSessionTemplate.delete(sqlId, rowMap);
+        return sqlSessionTemplate.delete(sqlId, rowMap);
     }
 
     public int delete(String sqlId, List<Map> list)
@@ -34,19 +34,19 @@ public class CommonDAO {
 
         for(Map rowMap : list)
         {
-            retVal += tmsSqlSessionTemplate.delete(sqlId, rowMap);
+            retVal += sqlSessionTemplate.delete(sqlId, rowMap);
         }
         return retVal;
     }
 
     public int insert(String sqlId)
     {
-        return tmsSqlSessionTemplate.insert(sqlId);
+        return sqlSessionTemplate.insert(sqlId);
     }
 
     public int insert(String sqlId, Map rowMap)
     {
-        return tmsSqlSessionTemplate.insert(sqlId, rowMap);
+        return sqlSessionTemplate.insert(sqlId, rowMap);
     }
 
     public int insert(String sqlId, List<Map> list)
@@ -55,19 +55,19 @@ public class CommonDAO {
 
         for(Map rowMap : list)
         {
-            retVal += tmsSqlSessionTemplate.insert(sqlId, rowMap);
+            retVal += sqlSessionTemplate.insert(sqlId, rowMap);
         }
         return retVal;
     }
 
     public int update(String sqlId)
     {
-        return tmsSqlSessionTemplate.update(sqlId);
+        return sqlSessionTemplate.update(sqlId);
     }
 
     public int update(String sqlId, Map rowMap)
     {
-        return tmsSqlSessionTemplate.update(sqlId, rowMap);
+        return sqlSessionTemplate.update(sqlId, rowMap);
     }
 
     public int update(String sqlId, List<Map> list)
@@ -76,80 +76,80 @@ public class CommonDAO {
 
         for(Map rowMap : list)
         {
-            retVal += tmsSqlSessionTemplate.update(sqlId, rowMap);
+            retVal += sqlSessionTemplate.update(sqlId, rowMap);
         }
         return retVal;
     }
 
     public final int queryForInt(String sqlId)
     {
-        Integer intVal = (Integer)tmsSqlSessionTemplate.selectOne(sqlId);
+        Integer intVal = (Integer) sqlSessionTemplate.selectOne(sqlId);
         return intVal.intValue();
     }
 
     public final int queryForInt(String sqlId, Map rowMap)
     {
-        Integer intVal = (Integer)tmsSqlSessionTemplate.selectOne(sqlId, rowMap);
+        Integer intVal = (Integer) sqlSessionTemplate.selectOne(sqlId, rowMap);
         return intVal.intValue();
     }
 
     public final int queryForInt(String sqlId, String key)
     {
-        Integer intVal = (Integer)tmsSqlSessionTemplate.selectOne(sqlId, key);
+        Integer intVal = (Integer) sqlSessionTemplate.selectOne(sqlId, key);
         return intVal.intValue();
     }
 
     public final double queryForDouble(String sqlId)
     {
-        Double doubleVal = Double.parseDouble(tmsSqlSessionTemplate.selectOne(sqlId)+"");
+        Double doubleVal = Double.parseDouble(sqlSessionTemplate.selectOne(sqlId)+"");
         return doubleVal.doubleValue();
     }
 
     public final double queryForDouble(String sqlId, Map rowMap)
     {
-        Double doubleVal = Double.parseDouble(tmsSqlSessionTemplate.selectOne(sqlId, rowMap)+"");
+        Double doubleVal = Double.parseDouble(sqlSessionTemplate.selectOne(sqlId, rowMap)+"");
         return doubleVal.doubleValue();
     }
 
     public final double queryForDouble(String sqlId, String key)
     {
-        Double doubleVal = Double.parseDouble(tmsSqlSessionTemplate.selectOne(sqlId, key)+"");
+        Double doubleVal = Double.parseDouble(sqlSessionTemplate.selectOne(sqlId, key)+"");
         return doubleVal.doubleValue();
     }
 
     public final Map queryForMap(String sqlId, Map rowMap)
     {
-        return (Map)tmsSqlSessionTemplate.selectOne(sqlId, rowMap);
+        return (Map) sqlSessionTemplate.selectOne(sqlId, rowMap);
     }
 
     public final Map queryForMap(String sqlId, Map rowMap, String keyValue)
     {
-        return (Map)tmsSqlSessionTemplate.selectMap(sqlId, rowMap, keyValue);
+        return (Map) sqlSessionTemplate.selectMap(sqlId, rowMap, keyValue);
     }
 
     public final List queryForList(String sqlId, Map rowMap)
     {
-        return tmsSqlSessionTemplate.selectList(sqlId, rowMap);
+        return sqlSessionTemplate.selectList(sqlId, rowMap);
     }
 
     public final List queryForList(String sqlId, Object paramObj)
     {
-        return tmsSqlSessionTemplate.selectList(sqlId, paramObj);
+        return sqlSessionTemplate.selectList(sqlId, paramObj);
     }
 
     public final List queryForList(String sqlId)
     {
-        return tmsSqlSessionTemplate.selectList(sqlId);
+        return sqlSessionTemplate.selectList(sqlId);
     }
 
     public final String queryForStr(String sqlId, Map rowMap)
     {
-        return (String)tmsSqlSessionTemplate.selectOne(sqlId, rowMap);
+        return (String) sqlSessionTemplate.selectOne(sqlId, rowMap);
     }
 
     public final String queryForStr(String sqlId)
     {
-        return (String)tmsSqlSessionTemplate.selectOne(sqlId);
+        return (String) sqlSessionTemplate.selectOne(sqlId);
     }
 }
 
