@@ -25,7 +25,10 @@ dependencies {
     /* jdbc */
     implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.2.16.RELEASE'
     implementation group: 'commons-dbcp', name: 'commons-dbcp', version: '1.2.2'
-    implementation files('./src/main/resources/libs/ojdbc14.jar')
+    // implementation files('./src/main/resources/libs/ojdbc14.jar')
+    // https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
+    implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '8.4.1.jre11'
+
 }
 
 test {

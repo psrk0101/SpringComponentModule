@@ -13,10 +13,10 @@
 
 	<!-- Database Config -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="url" value="jdbc:oracle:thin:@192.168.1.225:1521:SLPPRO"/>
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="username" value="SLP_ADM"/>
-		<property name="password" value="SLP_ADM"/>
+		<property name="url" value="jdbc:sqlserver://220.117.153.150:20105;databasename=VCCNT_ADM;sendStringParametersAsUnicode=false" />
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="username" value="VCCNT_ADM" />
+		<property name="password" value="VCCNT_ADM" />
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -41,7 +41,7 @@
 	<bean id="contentsTemplate" class="com.component.extract.template.xml.SqlXmlTemplate"/>
 	<!-- Extract Component -->
 	<bean id="contentsCreator" class="com.component.extract.ExtractService">
-		<property name="modules" value="ADM"/>
+		<property name="modules" value="WMS,CJKOREX,IF,ADM,TMS"/>
 		<property name="sqlId" value="SELECT_MODULE_QUERY_LIST"/>
 		<property name="rootPath" value="C:\\TEMP\SH\"/>
 		<property name="fileType" value=".xml"/>
