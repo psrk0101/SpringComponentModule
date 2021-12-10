@@ -3,6 +3,7 @@ package com.component.extract;
 import com.component.comn.CommonDAO;
 import com.component.extract.template.ContentsTemplateIF;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class ExtractService {
     @Autowired
     private CommonDAO dao;
