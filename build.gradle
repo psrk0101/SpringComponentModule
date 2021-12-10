@@ -29,6 +29,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
     implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '8.4.1.jre11'
 
+    /* redis */
+    implementation group: 'org.springframework.session', name: 'spring-session-data-redis', version: '2.5.2'
+    implementation group: 'io.lettuce', name: 'lettuce-core', version: '6.1.5.RELEASE'
 }
 
 test {
